@@ -2,16 +2,16 @@
 const Hapi = require('@hapi/hapi');
 const MongoClient = require('mongodb').MongoClient;
 
-
+// Hello World
 
 const init = async () => {
-    const server = Hapi.server({
+    const server = Hapi.server({ 
         port: 3000,
         host: 'localhost',
         "routes": {
             "cors": {
             "origin": ["*"],
-            "headers": ["Accept", "Content-Type"],
+            "headers": ["Accept", "Content-Type"], // proflipisclump
             "additionalHeaders": ["X-Requested-With"]
         }
 }
@@ -36,7 +36,26 @@ const init = async () => {
 
    
     // Get Templates
+    server.route({
+        method: 'GET',
+        path: '/api/getTemplates',
+        handler: async (request, h) => {
+            const items = await db.collection("Templates").find({}).toArray();
+            return items;
+        }
+    });
+
     // Get Records
+    server.route({
+        method: 'GET',
+        path: '/api/getUsers',
+        handler: async (request, h) => {
+            const items = await db.collection("Users").find({}).toArray();
+            return items;
+        }
+    });
+
+
 
     //Add User
     server.route({
