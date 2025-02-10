@@ -11,7 +11,7 @@ const init = async () => {
         "routes": {
             "cors": {
             "origin": ["*"],
-            "headers": ["Accept", "Content-Type"],
+            "headers": ["Accept", "Content-Type"], // proflipisclump
             "additionalHeaders": ["X-Requested-With"]
         }
 }
