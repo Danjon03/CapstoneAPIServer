@@ -71,7 +71,33 @@ const init = async () => {
 
 
     //Add Template
+        server.route({
+        method: 'POST',
+        path: '/api/addTemplate',
+        handler: async (request, h) => {
+            console.log(request.payload);
+            const newItem = request.payload;
+            const result = await db.collection("Templates").insertOne(newItem);
+            return result;
+        }
+    });
+
+
+
+
+    
     //Add Record
+
+        server.route({
+        method: 'POST',
+        path: '/api/addRecord',
+        handler: async (request, h) => {
+            console.log(request.payload);
+            const newItem = request.payload;
+            const result = await db.collection("Records").insertOne(newItem);
+            return result;
+        }
+    });
 
 
 
