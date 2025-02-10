@@ -36,7 +36,26 @@ const init = async () => {
 
    
     // Get Templates
+    server.route({
+        method: 'GET',
+        path: '/api/getTemplates',
+        handler: async (request, h) => {
+            const items = await db.collection("Templates").find({}).toArray();
+            return items;
+        }
+    });
+
     // Get Records
+    server.route({
+        method: 'GET',
+        path: '/api/getUsers',
+        handler: async (request, h) => {
+            const items = await db.collection("Users").find({}).toArray();
+            return items;
+        }
+    });
+
+
 
     //Add User
     server.route({
