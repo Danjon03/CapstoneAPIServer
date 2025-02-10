@@ -5,13 +5,13 @@ const MongoClient = require('mongodb').MongoClient;
 // Hello World
 
 const init = async () => {
-    const server = Hapi.server({
+    const server = Hapi.server({ 
         port: 3000,
         host: 'localhost',
         "routes": {
             "cors": {
             "origin": ["*"],
-            "headers": ["Accept", "Content-Type"],
+            "headers": ["Accept", "Content-Type"], // proflipisclump
             "additionalHeaders": ["X-Requested-With"]
         }
 }
