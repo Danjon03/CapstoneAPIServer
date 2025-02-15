@@ -48,7 +48,7 @@ const init = async () => {
     // Get Records
     server.route({
         method: 'GET',
-        path: '/api/getUsers',
+        path: '/api/getRecords',
         handler: async (request, h) => {
             const items = await db.collection("Users").find({}).toArray();
             return items;
