@@ -2,8 +2,7 @@
 const Hapi = require('@hapi/hapi');
 const MongoClient = require('mongodb').MongoClient;
 
-// Hello World
-
+// When you are setting up port forwarding try using port 443 and host 0.0.0.0
 const init = async () => {
     const server = Hapi.server({ 
         port: 3000,
