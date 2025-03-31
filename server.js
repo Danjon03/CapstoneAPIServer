@@ -49,7 +49,7 @@ const init = async () => {
         method: 'GET',
         path: '/api/getRecords',
         handler: async (request, h) => {
-            const items = await db.collection("Users").find({}).toArray();
+            const items = await db.collection("Records").find({}).toArray();
             return items;
         }
     });
